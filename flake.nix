@@ -9,6 +9,7 @@
       devShells.x86_64-linux.default = pkgs.mkShell {
         packages = [
           pkgs.nodejs_22
+          pkgs.python312
         ];
       };
   };

@@ -14,6 +14,10 @@
       date: text.split("\n")[2].match(/^### .*/g)[0].substring(4),
       text: text.split("\n").slice(3),
     };
+    // do not add post object if title contains WIP
+    if (ret.title.includes("WIP")) {
+      return;
+    }
     postObjs = [...postObjs, ret];
     postObjs = postObjs.sort((a,b) => (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0));
   }
